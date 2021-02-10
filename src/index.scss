@@ -1,0 +1,18 @@
+@import './assets/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: $cov-max-body-width;
+    min-width: $cov-min-body-width;
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin: auto;
+    background-color: $cov-background-color;
+    color: $cov-main-color;
+}

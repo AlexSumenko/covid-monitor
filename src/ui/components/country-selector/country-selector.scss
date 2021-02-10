@@ -1,0 +1,18 @@
+@import '../../../assets/variables';
+
+.country-selector {
+    margin: 1rem 0;
+
+    & span {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    & select {
+        background-color: $cov-background-color;
+        color: $cov-main-color;
+        min-width: 200px;
+        padding: 0.3rem 0.1rem;
+        outline: none;
+    }
+}

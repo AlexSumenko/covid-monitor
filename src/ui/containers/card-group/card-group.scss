@@ -1,0 +1,11 @@
+.card-group {
+    &__header {
+        margin-top: 2rem;
+    }
+
+    &__container {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}

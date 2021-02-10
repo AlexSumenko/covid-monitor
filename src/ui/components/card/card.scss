@@ -1,0 +1,12 @@
+@import '../../../assets/variables';
+
+.covid-card {
+    margin: 1rem 0;
+    border: 1px solid $cov-main-color;
+    border-radius: 0.8rem;
+    box-shadow: 3px 3px 5px -1px rgba(255, 255, 255, 0.69);
+
+    & > * {
+        padding: 0.5rem 0.2rem;
+    }
+}
