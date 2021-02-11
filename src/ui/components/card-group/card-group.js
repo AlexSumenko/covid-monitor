@@ -3,30 +3,30 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { selectActiveCountryStats } from '../../../store/selectors/covid';
 
-import Card from '../../components/card/card';
+import Card from './card/card';
 import './card-group.scss';
 
 const CardGroup = ({ selectedCountryStats }) => {
     return (
         <div className='card-group'>
             <h3 className='card-group__header'>{`${
-                selectedCountryStats.name || 'World'
+                selectedCountryStats?.name || 'World'
             } Statistics`}</h3>
             <div className='card-group__container'>
                 <Card
                     type='Cases'
-                    newCases={selectedCountryStats.stats?.newConfirmed}
-                    totalCases={selectedCountryStats.stats?.totalConfirmed}
+                    newCases={selectedCountryStats?.stats?.newConfirmed}
+                    totalCases={selectedCountryStats?.stats?.totalConfirmed}
                 />
                 <Card
                     type='Deaths'
-                    newCases={selectedCountryStats.stats?.newDeaths}
-                    totalCases={selectedCountryStats.stats?.totalDeaths}
+                    newCases={selectedCountryStats?.stats?.newDeaths}
+                    totalCases={selectedCountryStats?.stats?.totalDeaths}
                 />
                 <Card
                     type='Recoveries'
-                    newCases={selectedCountryStats.stats?.newRecovered}
-                    totalCases={selectedCountryStats.stats?.totalRecovered}
+                    newCases={selectedCountryStats?.stats?.newRecovered}
+                    totalCases={selectedCountryStats?.stats?.totalRecovered}
                 />
             </div>
         </div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../../store/actions/index';
 
-import CardGroup from '../card-group/card-group';
+import CardGroup from '../../components/card-group/card-group';
 import CountrySelector from '../../components/country-selector/country-selector';
 
 import './dashboard.scss';
