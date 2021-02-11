@@ -52,3 +52,9 @@ export const getCovidStats = () => {
             .catch(err => console.log(err));
     };
 };
+
+export const clearCovidStats = () => {
+    return {
+        type: actionTypes.CLEAR_COVID_STATS,
+    };
+};

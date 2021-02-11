@@ -8,10 +8,13 @@ import CountrySelector from '../../components/country-selector/country-selector'
 
 import './dashboard.scss';
 
-const Dashboard = ({ getCovidData, setActiveCountry, selectedCountry }) => {
+const Dashboard = ({ clearStore, getCovidData, setActiveCountry }) => {
     useEffect(() => {
         getCovidData();
-    }, [getCovidData]);
+        return () => {
+            clearStore();
+        };
+    }, [clearStore, getCovidData]);
 
     const onCountrySelection = countryCode => {
         setActiveCountry(countryCode);
@@ -33,6 +36,7 @@ const mapDispatchToProps = dispatch => {
         getCovidData: () => dispatch(actions.getCovidStats()),
         setActiveCountry: countryCode =>
             dispatch(actions.setCovidActiveCountry(countryCode)),
+        clearStore: () => dispatch(actions.clearCovidStats()),
     };
 };
 

@@ -1,1 +1,1 @@
-export { getCovidStats, setCovidActiveCountry } from './covid';
+export { clearCovidStats, getCovidStats, setCovidActiveCountry } from './covid';

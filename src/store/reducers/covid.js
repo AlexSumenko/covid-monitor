@@ -28,6 +28,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 selectedCountry: action.payload,
             };
+        case actionTypes.CLEAR_COVID_STATS:
+            return {
+                state: initialState,
+            };
         default:
             return state;
     }
