@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { selectCountries } from '../../../store/selectors/covid';
 
 import './country-selector.scss';
 
@@ -33,7 +34,7 @@ const CountrySelector = ({ changed, countriesStats }) => {
 
 const mapStateToProps = state => {
     return {
-        countriesStats: state.covid.countries,
+        countriesStats: selectCountries(state.covid),
     };
 };
 

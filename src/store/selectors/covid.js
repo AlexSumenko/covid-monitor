@@ -6,3 +6,5 @@ export const selectActiveCountryStats = store =>
           );
 
 export const selectUpdatedDate = store => new Date(store.date);
+
+export const selectCountries = store => store.countries;
