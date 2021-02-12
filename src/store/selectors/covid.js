@@ -4,3 +4,5 @@ export const selectActiveCountryStats = store =>
         : store.countries?.find(
               country => country.code === store.selectedCountry
           );
+
+export const selectUpdatedDate = store => new Date(store.date);

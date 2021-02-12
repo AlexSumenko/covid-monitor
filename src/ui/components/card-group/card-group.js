@@ -1,17 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { selectActiveCountryStats } from '../../../store/selectors/covid';
+import {
+    selectActiveCountryStats,
+    selectUpdatedDate,
+} from '../../../store/selectors/covid';
 
 import Card from './card/card';
 import './card-group.scss';
 
-const CardGroup = ({ selectedCountryStats }) => {
+const CardGroup = ({ selectedCountryStats, lastUpdatedAt }) => {
     return (
         <div className='card-group'>
-            <h3 className='card-group__header'>{`${
-                selectedCountryStats?.name || 'World'
-            } Statistics`}</h3>
+            <h3 className='card-group__header'>{`${selectedCountryStats?.name} Statistics`}</h3>
+            <p className='card-group__date'>{`(Last updated at: ${lastUpdatedAt})`}</p>
             <div className='card-group__container'>
                 <Card
                     type='Cases'
@@ -36,6 +38,7 @@ const CardGroup = ({ selectedCountryStats }) => {
 const mapStateToProps = state => {
     return {
         selectedCountryStats: selectActiveCountryStats(state.covid),
+        lastUpdatedAt: selectUpdatedDate(state.covid),
     };
 };
 
